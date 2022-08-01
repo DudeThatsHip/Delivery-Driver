@@ -26,11 +26,13 @@ public class Driver : MonoBehaviour
         transform.Translate(0, moveAmount, 0);
     }
 
+    // when bumping into something the vehicle slows down
     void OnCollisionEnter2D(Collision2D other) 
     {
         moveSpeed = slowSpeed;
     }
 
+    // Going over this object makes you speed up
     void OnTriggerEnter2D(Collider2D other) 
     {
         if (other.tag == "Boost")
